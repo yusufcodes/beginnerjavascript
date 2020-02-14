@@ -66,3 +66,11 @@ Generally, objects are used to group things together. A set of curly braces are 
 Note: Symbol is a type not fully covered in this section but good to know that it is a type!
 
 ### Types - Null and Undefined
+
+undefined: used for variables which either do not exist, or exist with no value set to it.
+
+null: An actual value stating that there is a value of 'nothing'.
+
+### Types - Booleans and Equality
+
+Boolean types are either **true** or **false**.
