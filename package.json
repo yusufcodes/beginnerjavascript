@@ -1,0 +1,33 @@
+{
+  "name": "repo",
+  "version": "1.0.0",
+  "description": "**Module 1 - The Basics**\r Note: I do not plan on writing the most detailed notes for this section as I have worked with JS before, this section will just allow for me to dump any bits of information I feel like I will find useful.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yusufcodes/beginnerjavascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yusufcodes/beginnerjavascript/issues"
+  },
+  "homepage": "https://github.com/yusufcodes/beginnerjavascript#readme",
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-wesbos": "0.0.19",
+    "eslint-plugin-html": "^5.0.3",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.3.0",
+    "prettier": "^1.16.4"
+  }
+}
