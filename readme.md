@@ -135,9 +135,14 @@ console.log(): Console is the object, and log() is the method associated with th
 */
 
 // Callback functions: These are functions which run when *something else* happens first, usually passed into some other function. Example: setting up an event listener may trigger a particular function to run in response to a user's action. This function is what is described as a Callback Function.
-
-
-
-
-
 ```
+
+### Debugging Tools
+
+'debugger' - if this is written as a statement, and the consoel is open, the code will 'stop' at this point allowing for you to view information abot the running code, e.g. the value of different variables at that point in time.
+
+Network tab - you can see all the different files needed to load the currently open page.
+
+Note: Video #16, mostly watched this as a reference. **This may be useful in the future when I might be working with JS! Debugging is a weaker area but something I feel will come with general development of an application.**
+
+## Module 3: The Tricky Bits
