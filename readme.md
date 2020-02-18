@@ -82,3 +82,62 @@ Parameters: Variables which we place within the function declaration parentheses
 Arguments: The actual values which are passed into a function call, matching the function's parameters that it is expecting.
 
 ### Different Ways To Declare Functions
+
+```js
+// 1.
+function doctorize(firstName)
+{
+    return `Dr. ${firstName}`;
+}
+
+// 2. Anonymous Function
+function (firstName)
+{
+    return `Dr. ${firstName}`;
+}
+
+// 3. Function Expression
+const doctorize = function (firstName)
+{
+    return `Dr. ${firstName}`;
+}
+
+// 4. Arrow Functions
+// Concise syntax, 'this' keyword scoping is different
+// Anonymous functions
+
+// Normal Function
+function inchToCM(inches)
+{
+    const cm = inches * 2.54;
+    return cm;
+}
+
+// Arrow Function
+// The value is implicitly returned as it is all on one line
+const inchToCM = inches => inches * 2.54;
+
+const add = (a, b = 3) => a + b;
+
+// Implicitly returning an object, parentheses required
+const makeABaby = (first, last) => ({name: `${first} ${last}`, age: 0});
+
+// Immediately Invoked Function Expression (IIFE)
+// My def: A function which is executed straight away, within its own scope. Promotes the idea of encapsulation if you need an isolated environment for your code to run.
+
+//
+(function(){
+    console.log('Hi!');
+})();
+
+/* Methods: This is a piece of code, called by a name, which is associated with an object. For example:
+console.log(): Console is the object, and log() is the method associated with the object.
+*/
+
+// Callback functions: These are functions which run when *something else* happens first, usually passed into some other function. Example: setting up an event listener may trigger a particular function to run in response to a user's action. This function is what is described as a Callback Function.
+
+
+
+
+
+```
