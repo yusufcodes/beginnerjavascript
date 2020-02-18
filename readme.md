@@ -74,3 +74,11 @@ Boolean types are either **true** or **false**.
 JavaScript best practice: use triple equals as opposed to double equals, which checks that the type of the two values being compared are the same.
 
 ## Module 2: Functions
+
+### Parameters and Arguments
+
+Parameters: Variables which we place within the function declaration parentheses, expecting them to be passed in when the function is called.
+
+Arguments: The actual values which are passed into a function call, matching the function's parameters that it is expecting.
+
+### Different Ways To Declare Functions
