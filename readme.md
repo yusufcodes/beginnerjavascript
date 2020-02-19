@@ -146,3 +146,23 @@ Network tab - you can see all the different files needed to load the currently o
 Note: Video #16, mostly watched this as a reference. **This may be useful in the future when I might be working with JS! Debugging is a weaker area but something I feel will come with general development of an application.**
 
 ## Module 3: The Tricky Bits
+
+### Scope
+
+'Where are my functions and variables available to me?' - This is the exact question which scoping answers.
+
+Global Variables: These variables are available anywhere in the application. Everything attached to this global scope is contained within 'Window'.
+
+```js
+const first = "yusuf"; // Function scoped
+let second = "second"; // Function scoped
+var age = 100; // Globally scoped - Window object
+```
+
+Functions: When functions are globally declared they are also attached to the Window object, so is available as a method of the Window object.
+
+If variables are not found within a function, the program will go up one level in scope, such as to the global scope, to find the variable, until it cannot find it.
+
+### Hoisting
+
+### Closures
