@@ -220,3 +220,27 @@ const gameTwo = createGame("gameTwo");
 gameOne();
 gameTwo();
 ```
+
+## The DOM - Working with HTML and CSS
+
+### The DOM - Introduction to the document
+
+The Window object contains information about the currently open window.
+We can use the Document object with the DOM (Document Object Model) which includes all of the elements on the page.
+
+### The DOM - Selecting Elements
+
+#### Loading External JS
+
+Place the script tag **before the closing body tag** to ensure all elements on the page have loaded before attempting to interact with them.
+
+#### Selecting Elements
+
+```js
+document.querySelector("p"); // Selects the first matching paragraph element
+document.querySelectorAll("div"); // Selects all matching div elements, a NodeList NOT an Array
+```
+
+There are also the methods 'getElementBy' ... which can be used, but the above two can grab all / most elements. (MDN for full syntax)
+
+### The DOM - Element Properties and Methods
