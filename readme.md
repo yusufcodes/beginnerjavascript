@@ -15,6 +15,14 @@ Different types of variables:
 - 'use strict' will cause the JavaScript environment to follow **Strict Mode** meaning that, if you do not declare a variable, an error will be displayed in the console.
 - Variable 'scope' describes where a variable is available to you in any given area of your code. 'var' (block scoped) is scoped differently to 'let' and 'const' (function scoped).
 
+**General Rule of Thumb When Declaring Variables:**
+
+- Always use const first
+- If needed, change this to let
+- Fallback to var only if necessary
+
+Wes states that this is his personal preference but as it makes sense to me, I'm going to try coding my JavaScript using these conventions.
+
 ### Code Quality Tooling with Prettier and ESLint
 
 - ESLint: JavaScript linter tool to find and report any issues. Examples are bad practices, design patterns, unused variables.
@@ -162,6 +170,23 @@ var age = 100; // Globally scoped - Window object
 Functions: When functions are globally declared they are also attached to the Window object, so is available as a method of the Window object.
 
 If variables are not found within a function, the program will go up one level in scope, such as to the global scope, to find the variable, until it cannot find it.
+
+#### Block Scoping
+
+Block Scoping is the concept where you assign and use variables which are **only** available in the scope that you are currently in. Block Scopes refer to areas of the code where you are dealing with a new set of curly braces, for example, within a conditional statement (for / if etc.)
+
+'let' is block scoped, whereas 'var' is function scoped, meaning that you can refer to any var variable anywhere within a function and it will be available.
+
+**Example:** Within a for loop, you'd want your incrementer variable to only be available withi this for loop, so you would declare it with a **let**:
+
+```js
+for (let i = 0; i < 10; i++) {
+  // Some for loop code here
+}
+```
+
+**Lexical Scoping:**
+Variables are looked up relative to where the function is defined, not where it is run from. Lexical refers to 'position'.
 
 ### Hoisting
 
