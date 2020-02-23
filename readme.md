@@ -198,3 +198,25 @@ Two things are 'hoisted':
 2. Variable Declarations - you can attempt to access a variable before it is set, this will return the value _undefined_. This happens because whilst the actual variable declaration is hoisted, the value associated with it is not. What is happening here is that the JavaScript Engine is preparing for this variable to contain some form of value, to be determined when the program is executed.
 
 ### Closures
+
+Definition: The ability to access a **parent level scope** from a **child scope**, even **after** the parent function has been terminated.
+**Example:**
+
+```js
+// Declaring functions
+function createGame(gameName) {
+  let score = 0;
+  return function win() {
+    score++;
+    return `Your name ${gameName} score is ${score}`;
+  };
+}
+
+const gameOne = createGame("gameOne");
+const gameTwo = createGame("gameTwo");
+
+// Running Functions
+// These will increment the variable, win, and output this value, each time either of the functions run, even though the function has been run and returned. The variable's value is remembered.
+gameOne();
+gameTwo();
+```
