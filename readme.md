@@ -190,4 +190,11 @@ Variables are looked up relative to where the function is defined, not where it 
 
 ### Hoisting
 
+Hoisting allows for you to refer to a function or variable before they are 'defined'.
+
+Two things are 'hoisted':
+
+1. Function Declarations - you can call a function before its official definition, function declarations are 'moved' to the top of the code. This only happens with regular functions which are defined using the function keyword.
+2. Variable Declarations - you can attempt to access a variable before it is set, this will return the value _undefined_. This happens because whilst the actual variable declaration is hoisted, the value associated with it is not. What is happening here is that the JavaScript Engine is preparing for this variable to contain some form of value, to be determined when the program is executed.
+
 ### Closures
