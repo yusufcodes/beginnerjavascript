@@ -244,3 +244,14 @@ document.querySelectorAll("div"); // Selects all matching div elements, a NodeLi
 There are also the methods 'getElementBy' ... which can be used, but the above two can grab all / most elements. (MDN for full syntax)
 
 ### The DOM - Element Properties and Methods
+
+Elements have different properties and methods that can be accessed. Elements are objects.
+
+**Example Properties**
+.textContent
+.innerText
+
+**Example Method**
+.insertAdjacentText
+
+Many more available on MDN
