@@ -255,3 +255,10 @@ Elements have different properties and methods that can be accessed. Elements ar
 .insertAdjacentText
 
 Many more available on MDN
+
+### The DOM - Working with Classes
+
+A HTML element can have a class associated with it, and in JavaScript we can use the **classList** property of an element to display a _DOMTokenList_ containing all of the classes. What is interesting about the classList is that within the prototype of this object, there are many methods that can be used. Examples:
+add: Add a class to the element
+toggle: Add/remove class depending on whether or not it already exists
+contains: Pass in the class name and it will turn true/false depending on whether or not the class exists in the element
