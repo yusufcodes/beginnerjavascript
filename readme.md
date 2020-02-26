@@ -262,3 +262,26 @@ A HTML element can have a class associated with it, and in JavaScript we can use
 add: Add a class to the element
 toggle: Add/remove class depending on whether or not it already exists
 contains: Pass in the class name and it will turn true/false depending on whether or not the class exists in the element
+
+### The DOM - Build in and Custom Data Attributes
+
+Attributes are any additional information provided to an HTML element such as _class, \_src_, etc.
+
+You can use getters and setters to view attributes / alter the attributes of an element, for example:
+
+```js
+pic.alt = "Alt text here";
+console.log(pic.alt);
+```
+
+If you want to create your own attributes, you can use **Custom Data Attributes.**
+Using this, you can create your own named attributes and then retrieve them in JavaScript:
+
+```js
+// The name can be: data-anythingHere, so in this case I used -name
+<img data-name="Yusuf" />;
+
+// You can then access the data by accessing the dataset property
+const custom = document.querySelector(".custom");
+console.log(custom.dataset);
+```
