@@ -399,3 +399,23 @@ This can be done using the removeEventListener function. You specify what type o
 ```js
 button.removeEventListener("click", functionNameHere);
 ```
+
+### Events - targets, bubbling, propagation, capture
+
+The 'Event' object has information about the currently executed event, such as which element the event has been fired from. We can pass in an 'event' parameter, which is made available to us when any event is ran.
+
+Properties of the Event object that are useful are **target** and **currentTarget**.
+
+- event.target: Returns the element from which the event was fired from, eg. the button that a user clicked. This is handy to grab any information out of the button, such as the price of something.
+- event.currentTarget: If a nested element is clicked, it will return the parent element from which the event is hooked on to.
+
+Event Propagation: This is where an event is fired from a child element, and it 'bubbles' up, so that if there is another listener for the same event (such as a click), it can be recognised by the listener for an action to be performed.
+This can be stopped, if you want, using the following code:
+
+```js
+event.stopPropagation();
+```
+
+'Bubble' is one direction, bottom-up, and Capture is an event moving from the top to the bottom.
+
+### Events - Prevent Default and Form Events
