@@ -285,3 +285,69 @@ Using this, you can create your own named attributes and then retrieve them in J
 const custom = document.querySelector(".custom");
 console.log(custom.dataset);
 ```
+
+### The DOM - Creating HTML
+
+This lecture goes through a way of inserting HTML into the DOM.
+
+```js
+document.createElement("p"); // Creation of an element specified by the tag name
+
+document.body.insertAdjacentElement("positionHere", elementHere); // Adding the element to the DOM using the insertAdjacentElement method
+```
+
+### The DOM - HTML from Strings and XSS
+
+HTML can be created using a string, rather than separately creating the element and populating it, so you'd be writing HTML within the string itself. This can be done using the backticks which are used in JavaScript.
+
+**Example:** Below is some HTML written into a string, with some values inserted through other variables, using the notation _\${ ... }_ where _..._ represents a value that you want to insert into the HTML.
+
+```js
+const myHTML = `
+<div class="wrapper">
+  <h2>Some title and description: ${desc}</h2>
+  <img src="${src}" alt="${desc}"/>
+</div>
+`;
+```
+
+A **downside** to this approach is that this is just a string, so any methods and attributes an element would normally have cannot be accessed. You need to insert the string into the DOM first, before being able to access any of this. (Note: There is a way to override this problem using some other methods: **createRange()** and then **createContextualFragment()** - I have not gone deeper into this).
+
+Once your HTML string is ready, below is one way to insert the string into the DOM. As long as the string is written with valid HTML, it will be correctly inserted into the DOM.
+
+```js
+document.body.appendChild(htmlHere);
+```
+
+_Security Issue with HTML Strings - XSS_
+XSS = Cross Site Scripting, where a script tag is included in some form of input from the user, meaning that any script could be executed based on the user's input.
+
+### The DOM - Traversing and Removing Nodes
+
+_Explore the differences between Elements and Nodes further?_
+
+Traversing the DOM refers to selecting an element on the page based on its position.
+
+Element: Ignores the text nodes but will include any other element types such as 'em' for emphasized text, and so on.
+
+**Element Methods:**
+
+- .children
+- .firstElementChild
+- .lastElementChild
+- .previousElementSibling
+- .nextElementSibling
+- .parentElement
+
+Node: Will include every single type of element, including the text nodes.
+
+**Node Elements:**
+
+- .childNodes
+- .firstChild
+- .lastChild
+- .previousSibling
+- .nextSibling
+- .parentNode
+
+**Removing Elements:** You can use the .remove() method on an element to remove it.
