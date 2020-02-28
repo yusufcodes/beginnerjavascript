@@ -351,3 +351,51 @@ Node: Will include every single type of element, including the text nodes.
 - .parentNode
 
 **Removing Elements:** You can use the .remove() method on an element to remove it.
+
+## Module 5: Events
+
+### Events - Event Listener
+
+#### Adding Event Listeners
+
+There are three steps to adding an event listener to some element on the page:
+
+1. Reference the element
+2. Specify what event to listen for
+3. Specify the function to be executed when this event happens
+
+```js
+const button = document.querySelector(".button"); // Find a button on the page with a class name of Button
+
+// Listening for the 'click' event on the button we referenced, performing an anonymous function when this event is listened for
+button.addEventListener("click", function() {
+  console.log("You just clicked on this button!");
+});
+```
+
+#### Adding Multiple Event Listeners
+
+First we select multiple elements using querySelectorAll
+
+querySelectorAll returns a NodeList. This can be iterated over using the forEach() method.
+
+Using the forEach() method, we can reference the current 'button' we are on in the for loop interation, and add an event listener to it.
+
+**Code Example:**
+
+```js
+const buttons = document.querySelectorAll("button.buy"); // Get all the 'button' elements with a class of 'buy'
+
+buttons.forEach(function(value) {
+  console.log("Binding event...");
+  value.addEventListener("click", functionNameHere);
+});
+```
+
+#### Removing Event Listeners
+
+This can be done using the removeEventListener function. You specify what type of event to stop listening for, followed by the function to be removed from the binding event.
+
+```js
+button.removeEventListener("click", functionNameHere);
+```
