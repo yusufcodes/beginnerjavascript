@@ -419,3 +419,25 @@ event.stopPropagation();
 'Bubble' is one direction, bottom-up, and Capture is an event moving from the top to the bottom.
 
 ### Events - Prevent Default and Form Events
+
+There are elements which have a default action which you may wish to prevent. An example could be when a user clicks on a link to another page, in this case you may want to do something else before the user accesses this new page. This is where you could **prevent the default action from occurring:**
+
+```js
+// Inside any event listener function:
+event.preventDefault();
+```
+
+Use cases for preventing the default action from occurring straight away:
+
+- Submitting a form - you could check that certain things are correct in the field first, like a data sanity check
+
+### Events - Accessibility Gotchas and Keyboard Codes
+
+Difference between Buttons and Links
+
+- Buttons: To be used to perfom some type of action in an application, not where you are changing to a different page
+- Link: Change the page
+
+Always check that any event you are listening for is not dependant on a particular piece of hardware, for example, a mouse. Example - not everyone may be using a mouse to browse the site, so any important action should be accessible in other ways, for example, 'tabbing' through the website using just the keyboard.
+
+[Keyboard Information](https://www.keycode.info)
