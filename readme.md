@@ -445,3 +445,25 @@ Always check that any event you are listening for is not dependant on a particul
 ## Module 7 - Logic and Flow Control
 
 ### BEDMAS
+
+### Coercion, Ternaries and Conditional Abuse
+
+**Corercion**: Forcing something of a different type translated into a boolean
+Example: Executing *!!*variableHere will return a true or false depending on whether or not the value exists. (Truthy / falsy values as reference). (A single ! will simply return the opposite of the value, so if a variable exists and you placed a ! before it, it will return false and vice versa).
+
+**Ternary**: This is a shorthand 'if' statement.
+Condition, condition when true, condition when false
+**Recap - Example:**
+
+```js
+const count = 0;
+const word = count === 1 ? "item" : "items";
+
+// AND AND Trick
+// Below is a basic ternary example:
+isAdmin ? showAdminBar() : null;
+// Adding null at the end can be seen as pointless so the following can be written instead:
+isAdmin && showAdminBar();
+
+// How it works: First it will check if isAdmin is true, and only upon confirming this will the showAdminBar() method actually be executed. This flow pattern is the same as the first ternary example.
+```
