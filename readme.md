@@ -441,3 +441,7 @@ Difference between Buttons and Links
 Always check that any event you are listening for is not dependant on a particular piece of hardware, for example, a mouse. Example - not everyone may be using a mouse to browse the site, so any important action should be accessible in other ways, for example, 'tabbing' through the website using just the keyboard.
 
 [Keyboard Information](https://www.keycode.info)
+
+## Module 7 - Logic and Flow Control
+
+### BEDMAS
