@@ -466,4 +466,48 @@ isAdmin ? showAdminBar() : null;
 isAdmin && showAdminBar();
 
 // How it works: First it will check if isAdmin is true, and only upon confirming this will the showAdminBar() method actually be executed. This flow pattern is the same as the first ternary example.
+
+// One liner if statement:
+if (isAdmin) showAdminBar(); //
 ```
+
+### Switch Statements
+
+Note: I've covered this before in JS and other languages so this will only serve as a refresher for myself.
+
+Things to note:
+
+- The value you are switching against goes in the parentheses
+- Each 'case' must correspond to the exact value you are looking for followed by a colon
+- After the colon you perform some tasks which must the be broken out of. Without the break all of the other cases will end up being evaluated, defeating the purpose of the entire thing
+- Default case to always be defined in case no matching element is found
+
+```js
+switch (valueHere) {
+  case "ValueOne":
+    // Do something
+    break;
+  case "ValueTwo":
+    // Do something else
+    break;
+  default:
+    // No matchig value so perform a default case
+    break;
+}
+```
+
+### Intervals and Timers
+
+setTimeout() allows for something to happen after a specified time
+
+```js
+setTimeout(function() {
+  console.log("Done");
+}, 3000); // Run after 3000 milliseconds
+```
+
+This function is called a callback function, because if we stated a particular timeout and then afterwards, wrote some other code, it would **queue** up the timeout whilst it runs any other code after it. It is only after the specified time that the function passed into setTimeout will run. This is a way to explore the **asynchronous** nature of JavaScript.
+
+setInterval() will run a particular method every x amount of milliseconds specified in the function.
+
+// TODO: Continue on #41 Intervals and Timers from **07:45**
