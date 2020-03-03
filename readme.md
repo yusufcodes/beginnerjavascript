@@ -513,3 +513,62 @@ setInterval() will run a particular method every x amount of milliseconds specif
 #### Clearing Timers
 
 You can use the **clearTimeout** method to clear any set timers by passing the timer into the method.
+
+## Module 8: Data Types
+
+### Objects
+
+Quick recap of how an Object looks in JavaScript, using one of the common ways of creating one:
+
+```js
+// The name of this object is anObject, with properties of 'name' and 'currentAge'
+const anObject = {
+  name: "Yusuf",
+  currentAge: "20",
+  thisIsAMethod: function() {
+    console.log(`I am ${name} and my current age is ${currentAge}`);
+  }
+};
+
+// Adding properties
+anObject.newProperty = "Hey";
+
+// Removing properties
+delete anObject.newProperty;
+```
+
+### Object Reference vs Values
+
+The example below is about storing an object **by reference** in another variable.
+
+As an example, say we have two objects called Person1 and Person2.
+
+```js
+const person1 = person2;
+// We are creating a REFERENCE to person2, and storing it in person1.
+
+person1.name = "Yusuf";
+// This will update the name property in BOTH person1 AND person2, becaus all person1 is, is a reference to person2.
+// This means that any changes made to person1 is directly applied to the person2 object.
+
+// This is how to create a brand new object, with the same contents as the one referenced inside of the curly braces
+
+// This is the 'Spread' operator
+const person1 = { ...person2 };
+
+// One thing to note about this is, however, that it only works on upper level values. So, if you change any inner values, it will also update it in the original object.
+```
+
+#### Merging two objects together using the Spread operator
+
+```js
+// Two objects to be merged
+const objectOne = { ... };
+const objectTwo = { ... };
+
+const mergedObject = { ...objectOne, ...objectTwo };
+```
+
+### Maps
+
+TODO: Carry on from seven minutes in
