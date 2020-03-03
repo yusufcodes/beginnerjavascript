@@ -510,4 +510,6 @@ This function is called a callback function, because if we stated a particular t
 
 setInterval() will run a particular method every x amount of milliseconds specified in the function.
 
-// TODO: Continue on #41 Intervals and Timers from **07:45**
+#### Clearing Timers
+
+You can use the **clearTimeout** method to clear any set timers by passing the timer into the method.
