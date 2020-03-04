@@ -571,4 +571,36 @@ const mergedObject = { ...objectOne, ...objectTwo };
 
 ### Maps
 
-TODO: Carry on from seven minutes in
+**Summary of when you should / should not use Maps **
+
+- Use a Map if you need to maintain the order of the items
+- Maps are for storing data, so unlike Objects, you cannot store functions as Map entries
+- Currently, Maps are not compatible with JSON which is commonly used when dealing with Objects
+
+**Code Examples of using Maps:**
+
+```js
+// Creating a new Map
+const map = new Map();
+
+// Adding values to the map: set()
+map.set('name', 'Yusuf');
+map.set(100, 'The number one hundred');
+
+// Using an object as the reference of a Map value
+const objExample = {
+  name: 'Yusuf';
+  age: '20';
+}
+
+map.set(objExample, 'A cool person');
+
+// Iterating over a Map
+// let prizes = a new map with some arbituary values:
+
+// Use of destructuring to extract 'points' and 'prizes' from the *prizes* Map using the 'for .. of' syntax
+for (const [points, prize] of prizes)
+{
+  console.log(`${points} ${prize}`);
+}
+```
