@@ -604,3 +604,81 @@ for (const [points, prize] of prizes)
   console.log(`${points} ${prize}`);
 }
 ```
+
+### Arrays
+
+An array is a structure where you can store data where the order of the array is important. Arrays are referenced by an 'index' starting from 0.
+
+```js
+// Creating an array and populating it with values
+const names = ['value1', 'value2', ...]; // 'Array Literal'
+
+Array.isArray(passInArrayHere); // Check if something is an array
+
+// Arrays begin at 0 index, so this is how to grab the first value
+console.log(names[0]);
+
+names.length // Grab the number of items in an element
+
+arrayName.findIndex(...) // Find the index of an element
+
+// Adding an entry to the END of the array
+names.push('newElement!');
+
+// Adding an entry to the FRONT of the array
+names.unshift('anotherNewElement!');
+
+// .flat() method: If you have arrays inside of an array, flat() will turn the inner arrays into single elements: 2D Array -> 1D Array (chain it onto the end of the array)
+
+// Adding entries to the middle
+// There is no set method to adding an entry to the middle so the following steps need to be taken:
+/*
+1. Create a new array
+2. Use the spread operator to copy over the content of the original array, using slice to get the elements up to the one before you are inserting the new item
+3. Inserting your new item as another element in the array (comma separation)
+4. Same as number 2, spread over the rest of the array to finish the middle-placement of the item
+CODE:
+*/
+const bikes = ['one', 'two', 'four', 'five'];
+const newBikes = [
+  ...bikes.slice(0,2),
+  'three',
+  ...bikes.slice(2)
+];
+
+// Deleting an element using the Spread operator
+const newBikes2 = [
+  ...newBikes.slice(0,3); // Get everything up to and NOT including the third third element (we want to remove this)
+  ...newBikes.slice(4); // Skip the third element and continue grabbing the rest of the elements from 4 onwards
+];
+
+// Note: Within the Prototype object of an Array, there are many methods that can be used against any array
+
+```
+
+**Mutable methods**: Perform mutation operations, where it changes the original version of the array
+Example methods:
+
+- reverse(): reverses the order of the array, changing the original one
+
+Use a mutated method WITHOUT mutating the original:
+Take a copy of the array
+
+```js
+// Use the Spread operator to copy the original array into the new array
+const numbersReversed = [...numbers];
+// Now you can use this NEW array to keep the original Array in-tact
+```
+
+**Immutable methods**: Does **not** change the original version of the array but instead, it will return a new copy of the original array, with the new changes
+
+- slice(): Takes some part of the array with a start and end index, but makes a new copy of this rather than creating a new array
+
+```js
+// slice: mutable
+// Returns an array from beginning (inclusive) to end (non-inclusive), original array is not modified
+
+// splice: immutable
+// Returns an array from beginning (inclusive) and then asks how many elements to go for, original array IS modified
+// Letter p for persistent? Idk, this might help remember that original data is going to be modified?
+```
