@@ -45,37 +45,65 @@
 
     const feedback = [{
         comment: 'Love the burgs',
-        rating: 4
+        rating: 4,
       },
       {
         comment: 'Horrible Service',
-        rating: 2
+        rating: 2,
       },
       {
         comment: 'Smoothies are great, liked the burger too',
-        rating: 5
+        rating: 5,
       },
       {
         comment: 'Ambiance needs work',
-        rating: 3
+        rating: 3,
       },
       {
         comment: 'I DONT LIKE BURGERS',
-        rating: 1
+        rating: 1,
       },
     ];
 
     /*
       Static Methods
+      These can be accessed directly from the Array object without being tied to a particular array that has been created
     */
 
-    // Array.of();
+    // Array.of(); - creation of an Array from its argument
+    const arrayOf = Array.of('itemOne', 'itemTwo'); // Creates an array containing these elements
+
+    // Array.from(); Takes in a set of options and creates a new Array from these options
+    // from: Takes an object with some options first, and then a function to run, and uses this function to create a new Array, populating it with whatever is returned from the method
+    /* eslint-disable prettier/prettier */
+    const rangeFirst = Array.from({
+      length: 10
+    }, function () { // 'item' and 'index' available in this function
+      return 'item';
+    });
 
     // Make a function that creates a range from x to y with Array.from();
+    // Another example using Array.from()
+    // createRange: Takes in a start and end value, and using these numbers, creates an array of the size of the range calculated
+    function createRange(start, end) {
+      const range = Array.from({
+          length: end - start + 1
+        },
+        function (item, index) {
+          return index + start;
+        });
+      return range;
+    }
 
     // Check if the last array you created is really an array with Array.isArray();
 
     // Take the meats object and make three arrays with Object.entries(), Object.keys, Object.values()
+    // These methods are ran on objects, but they return an Arrray of values
+
+    console.dir(Object.entries(meats)); // 2D array, each inner array is an entry to the object
+    console.dir(Object.keys(meats)); // Array of object keys/properties
+    console.dir(Object.values(meats)); // Array of object values
+
 
     /*
       Instance Methods
