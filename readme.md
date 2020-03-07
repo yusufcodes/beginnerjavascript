@@ -682,3 +682,39 @@ const numbersReversed = [...numbers];
 // Returns an array from beginning (inclusive) and then asks how many elements to go for, original array IS modified
 // Letter p for persistent? Idk, this might help remember that original data is going to be modified?
 ```
+
+### Array Cardio - Instance Methods (notes)
+
+After completing the coding tasks for this section I wanted to add a summary of all the methods + what they do here:
+
+#### Types of Array Methods:
+1. Static Methods: These are attached to the Array object itself, rather than an instance of the Array object.
+
+Example Methods:
+- Array.of()
+- Array.from()
+- Array.isArray()
+
+##### Aside: Object Methods
+These methods are ran against the 'Object' object, however they return Arrays:
+- Object.entries()
+- Object.keys()
+- Object.values()
+
+1. Instance Methods: These are methods which rely on the existence of the associated object. For example, you need to have an actual Array to run the following methods against
+
+Example: The following method is chained onto the array to be executed
+```js
+buns.join(); 
+```
+
+#### Examples of Instance Methods
+- .join()
+- .split() - A String method returning an Array
+- .pop()
+- .push()
+- .shift()
+- .unshift()
+- 
+
+2. Callback Methods (not covered yet)
