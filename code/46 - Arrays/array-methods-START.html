@@ -9,8 +9,9 @@
 
   <body>
     <script>
+      // eslint-disable-next-line prettier/prettier
       const toppings = [
-        "Mushrooms ",
+        "Mushrooms",
         "Tomatoes",
         "Eggs",
         "Chili",
@@ -22,7 +23,7 @@
         "Onions",
         "Cheese"
       ];
-
+      // eslint-disable-next-line prettier/prettier
       const buns = ["egg", "wonder", "brioche"];
 
       const meats = {
@@ -226,15 +227,31 @@
       const betterRatings = feedback.filter(element => element.rating !== 1);
       console.log(betterRatings);
 
-      // TODO - Continue from 19:41
-
       // check if there is at least 5 of one type of meat with some()
-      console.log(Object.entries(meats));
-      // const fiveMeats = Array.from(meats).some(element => element >= 5);
-      // console.log(fiveMeats);
+      const atLeastFive = Object.values(meats).some(element => element >= 5);
+      console.log(atLeastFive);
+
       // make sure we have at least 3 of every meat with every()
+      const threeOfEach = Object.values(meats).every(element => element >= 3);
+      console.log(threeOfEach);
+
       // sort the toppings alphabetically with sort()
+      console.log(toppings.sort());
+
       // sort the order totals from most expensive to least with .sort()
+      /* const prices = {
+        hotDog: 453,
+        burger: 765,
+        sausage: 634,
+        corn: 234
+      }; */
+      const pricesArray = Object.entries(prices);
+      // Object.from to convert back to an Array
+      pricesArray.sort(function(itemFirst, itemSecond) {
+        return itemFirst[1] - itemSecond[1];
+      });
+      console.table(pricesArray);
+
       // Sort the prices with sort()
 
       /*

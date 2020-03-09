@@ -721,8 +721,15 @@ buns.join();
 - .push()
 - .shift()
 - .unshift()
--
 
 ### Array Cardio - Callback Methods and Function Generation
 
-2. Callback Methods (not covered yet)
+1. Callback Methods: These are methods which take in a callback function, which determines the outcome of the method.
+
+#### Examples of Callback Methods
+
+- .find()
+- .filter()
+- .some()
+- .every()
+- .sort()
