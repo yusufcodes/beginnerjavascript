@@ -733,3 +733,65 @@ buns.join();
 - .some()
 - .every()
 - .sort()
+
+## Module 9: Looping and Iterating
+
+### Array .forEach
+
+This is a callback function which runs once per item in an Array, doing what we tell it to do. 
+
+### Array 'Mapping'
+
+The map function takes in an array and for each item in the array, will perform some type of operation on it. It will always return the same number of elements as it started with. The current element is always made available to us, so can be referenced with any given name.
+
+**Example:**
+
+```js 
+// Adding 'Bos' at the end of an Array of names
+const fullNames = ['Wes', 'Kait', 'Poppy'].map(name => `${name} Bos`);
+```
+
+The map function can be used on objects as well e.g. data sanitisation of data that has come from an API.
+
+(DateTime converter)[epoch.now.sh]
+
+### Array: Filter, Find and High Order Functions
+
+#### Filter
+
+This method, used on an Array, takes in a function specifying the conditions for which you want to 'filter' the data. You can then return true or false depending on the data you want to see. It is a good way of creating a 'subset' of data from an array.
+
+**Example:**
+
+```js
+// Filtering based on a person being older than 40
+const over40 = arrayHere.filter(function (person) {
+  if (person.age > 40) {
+    return true;
+  } else {
+    return false;
+  }
+});
+
+// Shorthanded version
+const over40 = arrayHere.filter(person => person.age > 40);
+```
+
+#### Find
+
+This function is similar to Filter, except it will find and return the first instance of the search criteria specified in the function (one item), whilst filter will go over every single item using the criteria specified (returning an entire array).
+
+**Example:**
+
+```js
+// High Order Function: A function that returns another function
+function findById(id) {
+  return function isStudent(student) {
+    return student.id === id;
+  }
+};
+
+// We can pass the High Order Function into 'find', this is better because we can reuse 'findById' rather than re-write the same 'stu.id === idHere'
+const student = students.find(findById('idHere'));
+```
+
