@@ -795,3 +795,25 @@ function findById(id) {
 const student = students.find(findById('idHere'));
 ```
 
+### Reduce
+
+Loop over each item in an array and return an accumulated result based on each item. It can remember the 'value' of the previous item in the array and use this information to perform some sort of operation.
+
+**Parameters - for the inner function we are running:**
+accumulator: The previous value from that instance of the reduce method
+currentValue: Current value that the reduce function is on
+
+**Example:**
+
+```js
+function tallyNumbers(tally, currentTotal) {
+  console.log(`Current tally: ${tally}`);
+  console.log(`Current total: ${total}`);
+  return tally + currentTotal; // Accumulator becomes the sum of the current running tally and the current value added together.
+}
+
+// This will accumulate all of the values in orderTotals using the tallyNumbers function starting at the index 0. The value 0 does not need to be specified if you do not want to begin at the first element. It will otherwise default to the first two elements.
+const allOrders = orderTotals.reduce(tallyNumbers, 0);
+```
+
+TO DO: Continue on Video #53: Looping and Iterating - Reduce Exercise
