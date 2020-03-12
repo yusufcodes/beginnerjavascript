@@ -738,7 +738,7 @@ buns.join();
 
 ### Array .forEach
 
-This is a callback function which runs once per item in an Array, doing what we tell it to do. 
+This is a callback function which runs once per item in an Array, doing what we tell it to do.
 
 ### Array 'Mapping'
 
@@ -746,9 +746,9 @@ The map function takes in an array and for each item in the array, will perform 
 
 **Example:**
 
-```js 
+```js
 // Adding 'Bos' at the end of an Array of names
-const fullNames = ['Wes', 'Kait', 'Poppy'].map(name => `${name} Bos`);
+const fullNames = ["Wes", "Kait", "Poppy"].map(name => `${name} Bos`);
 ```
 
 The map function can be used on objects as well e.g. data sanitisation of data that has come from an API.
@@ -765,7 +765,7 @@ This method, used on an Array, takes in a function specifying the conditions for
 
 ```js
 // Filtering based on a person being older than 40
-const over40 = arrayHere.filter(function (person) {
+const over40 = arrayHere.filter(function(person) {
   if (person.age > 40) {
     return true;
   } else {
@@ -788,11 +788,11 @@ This function is similar to Filter, except it will find and return the first ins
 function findById(id) {
   return function isStudent(student) {
     return student.id === id;
-  }
-};
+  };
+}
 
 // We can pass the High Order Function into 'find', this is better because we can reuse 'findById' rather than re-write the same 'stu.id === idHere'
-const student = students.find(findById('idHere'));
+const student = students.find(findById("idHere"));
 ```
 
 ### Reduce
