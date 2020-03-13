@@ -851,3 +851,5 @@ for (const prop in wes) {
 #### While and Do ... While loops
 I know how these work but as a reference, this is the difference between the two:
 **While loops** assess the condition first before continuing in the code, whilst a **Do ... While** loop will assess the condition *after* running the code it is given.
+
+*NOTE:* End of this module reached. In Wes Bos' JavaScript30 course there are two days of 'Array Cardio' where I can practice everything learned in this module so far as well if needed.
