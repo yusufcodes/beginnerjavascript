@@ -562,12 +562,27 @@
 
       const lowercase = char => char.toLowerCase();
 
+      /* instanceCounter: Takes in the individual characters of the resultant text, and for each,
+      will add it to the empty counts object with a value. 
+      If it is the first instance of the character, it will add the entry of the character equal to one.
+      Otherwise, it will find the existing entry and increment the value by one. */
+      function instanceCounter(counts, char) {
+        console.log(counts);
+        console.log(char);
+        counts[char] ? (counts[char] += 1) : (counts[char] = 1);
+        console.log("-----------------------");
+        return counts;
+      }
+
       // result will store the filtered version of each character
       const result = text
         .split("") // char -> single item in the array
         .filter(isValidChar) // retrieve the characters we want
-        .map(lowercase); // Turn all characters into lowercase
-      // TODO: carry on from 09:34
+        .map(lowercase) // Turn all characters into lowercase
+        // Passing in the 'reducerFunction' and the starting value, in this case an empty object.
+        .reduce(instanceCounter, {});
+
+      console.log(result);
     </script>
   </body>
 </html>
