@@ -853,3 +853,28 @@ I know how these work but as a reference, this is the difference between the two
 **While loops** assess the condition first before continuing in the code, whilst a **Do ... While** loop will assess the condition *after* running the code it is given.
 
 *NOTE:* End of this module reached. In Wes Bos' JavaScript30 course there are two days of 'Array Cardio' where I can practice everything learned in this module so far as well if needed.
+
+## Module 10: Harder Practice Exercises
+Note: I want to come back to this at a later stage so I can continue on with more theory first
+
+## Module 11: Prototypes, 'this', 'new' and Inheritance
+
+### The New Keyword
+
+Using the **new** keyword in front of a function will create an instance of the function that is being used, instead of returning whatever is done inside the function itself.
+
+```js
+function Pizza() {
+  console.log('Making a Pizza!')
+}
+
+const pepperoniPizza = new Pizza();
+console.log(pepperoniPizza);
+
+console.log(pepperoniPizza.constructor); // This will display the original function from which the object was created from
+console.log(pepperoniPizza instanceof Pizza); // This will return True. This is a good way to check what sort of object a particular item is.
+```
+
+When we console.log the 'pepperoniPizza' it will return a Pizza object to us. This will currently be empty as we haven't populated the object with anything.
+
+
