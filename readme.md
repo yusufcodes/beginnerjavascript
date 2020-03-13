@@ -803,6 +803,10 @@ Loop over each item in an array and return an accumulated result based on each i
 accumulator: The previous value from that instance of the reduce method
 currentValue: Current value that the reduce function is on
 
+**Parameters - for the actual .reduce() method:**
+functionToRun: This is the first parameter and can be written as an anonymous function, or an external method (callback)
+startingValue: Example with a number based reduce method this could be 0. With an object based method it could be an empty object to begin with.
+
 **Example:**
 
 ```js
@@ -815,5 +819,3 @@ function tallyNumbers(tally, currentTotal) {
 // This will accumulate all of the values in orderTotals using the tallyNumbers function starting at the index 0. The value 0 does not need to be specified if you do not want to begin at the first element. It will otherwise default to the first two elements.
 const allOrders = orderTotals.reduce(tallyNumbers, 0);
 ```
-
-TO DO: Continue on Video #53: Looping and Iterating - Reduce Exercise
