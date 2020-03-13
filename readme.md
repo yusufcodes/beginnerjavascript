@@ -819,3 +819,35 @@ function tallyNumbers(tally, currentTotal) {
 // This will accumulate all of the values in orderTotals using the tallyNumbers function starting at the index 0. The value 0 does not need to be specified if you do not want to begin at the first element. It will otherwise default to the first two elements.
 const allOrders = orderTotals.reduce(tallyNumbers, 0);
 ```
+
+### Looping and Iterating: for, for of, for in and while loops
+
+#### For Loop
+Not written anything on these because I've written these many times in different languages (lol)
+
+#### For Of loop
+Used to be used on an iterable (things with some sort of length such as an array or string). The example below would print out each of the characters of the string.
+
+Note: For ... of loop allows for the **await** keyword to be used inside of it, so if any data needs to be parsed in a particular way before an async/await runs, we can use for-of for this usecase.
+
+```js
+for (const letter of name)
+{
+  console.log(letter);
+}
+```
+
+#### For In loop
+This will return the **keys** of an array or object, for when you do not want the values.
+
+Note: For an object, it will display the properties on both the object **and** the object's *prototype*. This is an individual usecase for using for ... in over using something like Object.entries, which does not display anything from an object's prototype.
+
+```js
+for (const prop in wes) {
+  console.log(prop); // Returns the keys for each value in 'wes'
+}
+```
+
+#### While and Do ... While loops
+I know how these work but as a reference, this is the difference between the two:
+**While loops** assess the condition first before continuing in the code, whilst a **Do ... While** loop will assess the condition *after* running the code it is given.
