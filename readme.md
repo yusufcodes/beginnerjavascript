@@ -823,24 +823,26 @@ const allOrders = orderTotals.reduce(tallyNumbers, 0);
 ### Looping and Iterating: for, for of, for in and while loops
 
 #### For Loop
+
 Not written anything on these because I've written these many times in different languages (lol)
 
 #### For Of loop
+
 Used to be used on an iterable (things with some sort of length such as an array or string). The example below would print out each of the characters of the string.
 
 Note: For ... of loop allows for the **await** keyword to be used inside of it, so if any data needs to be parsed in a particular way before an async/await runs, we can use for-of for this usecase.
 
 ```js
-for (const letter of name)
-{
+for (const letter of name) {
   console.log(letter);
 }
 ```
 
 #### For In loop
+
 This will return the **keys** of an array or object, for when you do not want the values.
 
-Note: For an object, it will display the properties on both the object **and** the object's *prototype*. This is an individual usecase for using for ... in over using something like Object.entries, which does not display anything from an object's prototype.
+Note: For an object, it will display the properties on both the object **and** the object's _prototype_. This is an individual usecase for using for ... in over using something like Object.entries, which does not display anything from an object's prototype.
 
 ```js
 for (const prop in wes) {
@@ -849,12 +851,14 @@ for (const prop in wes) {
 ```
 
 #### While and Do ... While loops
-I know how these work but as a reference, this is the difference between the two:
-**While loops** assess the condition first before continuing in the code, whilst a **Do ... While** loop will assess the condition *after* running the code it is given.
 
-*NOTE:* End of this module reached. In Wes Bos' JavaScript30 course there are two days of 'Array Cardio' where I can practice everything learned in this module so far as well if needed.
+I know how these work but as a reference, this is the difference between the two:
+**While loops** assess the condition first before continuing in the code, whilst a **Do ... While** loop will assess the condition _after_ running the code it is given.
+
+_NOTE:_ End of this module reached. In Wes Bos' JavaScript30 course there are two days of 'Array Cardio' where I can practice everything learned in this module so far as well if needed.
 
 ## Module 10: Harder Practice Exercises
+
 Note: I want to come back to this at a later stage so I can continue on with more theory first
 
 ## Module 11: Prototypes, 'this', 'new' and Inheritance
@@ -865,7 +869,7 @@ Using the **new** keyword in front of a function will create an instance of the 
 
 ```js
 function Pizza() {
-  console.log('Making a Pizza!')
+  console.log("Making a Pizza!");
 }
 
 const pepperoniPizza = new Pizza();
@@ -877,4 +881,36 @@ console.log(pepperoniPizza instanceof Pizza); // This will return True. This is 
 
 When we console.log the 'pepperoniPizza' it will return a Pizza object to us. This will currently be empty as we haven't populated the object with anything.
 
+### The 'this' Keyword
 
+Definition: The instance of an object to which a function is bound.
+
+Example: If you create a **button** HTML element, attach an event listener to it, and print out the this keyword of this button, it points directly to that button itself.
+This button is an instance of the 'Button' object.
+_Sidenote:_ Where the 'this' keyword points to exactly can be altered using the **bind** method.
+
+#### The 'this' keyword and functions
+
+In a normal function, defined using the usual 'function' keyword, the 'this' keyword is scoped to the instance of that function.
+In an **arrow function**, the 'this' keyword points to the Global object, which, in the browser, is the Window.
+
+**Use Case for Arrow Function:**
+
+Let's say for example, you are already inside of a function and now need to write another function inside of it, such as when using setTimeout. When writing this as a **normal function**, the 'this' keyword is going to change, as per normal behaviour.
+
+However, we know that the 'this' keyword will not change with an Arrow Function, so we can use this to 'save' the state of the 'this' keyword when already inside of a function.
+
+**Example:** This function is to be called by a click event listener.
+
+```js
+function displayButtonInformation() {
+  console.log("The this keyword outside:", this);
+  setTimeout(() => {
+    console.log("The this keyword inside:", this);
+    // As we used an Arrow Function, the this keyword remains pointing to the button that was clicked.
+    this.textContent = "You clicked me!";
+  }, 1000);
+}
+```
+
+The 'this' keyword refers to the instance of the thing that was made. For example, let's say we have a **Pizza** class which is instantiated with some information. If we were to output the this keyword within this Pizza class, all the information for the **current instance** would be displayed.
