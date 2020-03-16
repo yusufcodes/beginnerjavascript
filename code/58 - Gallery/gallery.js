@@ -1,24 +1,23 @@
+// Gallery 'class' ?
 function Gallery(gallery) {
   if (!gallery) {
     throw new Error('No Gallery Found!');
   }
-  // select the elements we need
-  const images = Array.from(gallery.querySelectorAll('img'));
+
+  const images = Array.from(gallery.querySelectorAll('img')); // NodeList -> Array
   const modal = document.querySelector('.modal');
   const prevButton = modal.querySelector('.prev');
   const nextButton = modal.querySelector('.next');
   let currentImage;
 
   function openModal() {
-    console.info('Opening Modal...');
-    // First check if the modal is already open
+    console.log('Opening Modal');
     if (modal.matches('.open')) {
-      console.info('Madal already open');
-      return; // stop the function from running
+      console.info('Modal is open!');
     }
     modal.classList.add('open');
 
-    // Event listeners to be bound when we open the modal:
+    // Event listeners bound when we open modal
     window.addEventListener('keyup', handleKeyUp);
     nextButton.addEventListener('click', showNextImage);
     prevButton.addEventListener('click', showPrevImage);
@@ -26,10 +25,9 @@ function Gallery(gallery) {
 
   function closeModal() {
     modal.classList.remove('open');
-    // TODO: add event listeners for clicks and keyboard..
+    // TODO: Add event listeners for clicks and keyboard events
     window.removeEventListener('keyup', handleKeyUp);
     nextButton.removeEventListener('click', showNextImage);
-    prevButton.removeEventListener('click', showPrevImage);
   }
 
   function handleClickOutside(e) {
@@ -45,38 +43,56 @@ function Gallery(gallery) {
   }
 
   function showNextImage() {
+    // Compare the current image relative to the 'next' image
+    // console.log(currentImage.nextElementSibling);
     showImage(currentImage.nextElementSibling || gallery.firstElementChild);
   }
+
   function showPrevImage() {
+    // Compare the current image relative to the 'next' image
+    // console.log(currentImage.nextElementSibling);
     showImage(currentImage.previousElementSibling || gallery.lastElementChild);
   }
 
+  // showImage: This function will handle the action where the user clicks
+  // on one of the images in the gallery, to display the modal.
+  // The image to be displayed is passed in.
   function showImage(el) {
     if (!el) {
-      console.info('no image to show');
-      return;
+      console.info('No image to show');
     }
-    // update the modal with this info
+    // Update modal with this information
+
+    // Grab each of the modal entries
+
+    // Get the information from the current instance of the gallery
+
+    // Use the modal entries we grabbed and update the textContent of it to reflect the current selected image
     console.log(el);
+
+    // Update image src
     modal.querySelector('img').src = el.src;
     modal.querySelector('h2').textContent = el.title;
     modal.querySelector('figure p').textContent = el.dataset.description;
     currentImage = el;
+    // Update modal h2
+    // Update modal description
+  }
+
+  function handleImageClick(event) {
+    showImage(event.currentTarget);
     openModal();
   }
 
-  // These are our Event Listeners!
-  images.forEach(image =>
-    image.addEventListener('click', e => showImage(e.currentTarget))
-  );
+  // EVENT LISTENERS HERE
+  images.forEach(image => image.addEventListener('click', handleImageClick));
 
-  // loop over each image
+  // Loop over each image
   images.forEach(image => {
-    // attach an event listener for each image
+    // Attach event listener for each
     image.addEventListener('keyup', e => {
-      // when that is keyup'd, check if it was enter
+      // Check for a keyup enter key
       if (e.key === 'Enter') {
-        // if it was, show that image
         showImage(e.currentTarget);
       }
     });
@@ -84,8 +100,6 @@ function Gallery(gallery) {
 
   modal.addEventListener('click', handleClickOutside);
 }
-
-// Use it on the page
 
 const gallery1 = Gallery(document.querySelector('.gallery1'));
 const gallery2 = Gallery(document.querySelector('.gallery2'));
