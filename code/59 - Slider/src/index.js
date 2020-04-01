@@ -19,8 +19,8 @@ function Slider(slider) {
 
   // Selecting needed elements for the slider
   const slides = slider.querySelector('.slides');
-  const prevButton = document.querySelector('.goToPrev');
-  const nextButton = document.querySelector('.goToNext');
+  const prevButton = document.querySelectorAll('.goToPrev');
+  const nextButton = document.querySelectorAll('.goToNext');
 
   function startSlider() {
     current = slider.querySelector('.current') || slides.firstElementChild;
@@ -38,10 +38,38 @@ function Slider(slider) {
 
   function move(direction) {
     const classesToRemove = ['prev', 'current', 'next'];
+
+    prev.classList.remove(...classesToRemove);
+    current.classList.remove(...classesToRemove);
+    next.classList.remove(...classesToRemove);
+
+    if (direction === 'back') {
+      [prev, current, next] = [
+        prev.previousElementSibling || slides.lastElementChild,
+        prev,
+        current,
+      ];
+    } else {
+      [prev, current, next] = [
+        current,
+        next,
+        next.nextElementSibling || slides.firstElementChild,
+      ];
+    }
+
+    applyClasses();
   }
 
   startSlider();
   applyClasses();
+
+  // Event listeners
+  // prevButton.addEventListener('click', () => move('back'));
+  prevButton.forEach(el => el.addEventListener('click', () => move('back')));
+
+  nextButton.forEach(el => el.addEventListener('click', move));
+
+  // nextButton.addEventListener('click', move);
 } // End of Slider object
 
 // Create instances of the sliders
