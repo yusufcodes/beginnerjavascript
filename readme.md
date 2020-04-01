@@ -914,3 +914,12 @@ function displayButtonInformation() {
 ```
 
 The 'this' keyword refers to the instance of the thing that was made. For example, let's say we have a **Pizza** class which is instantiated with some information. If we were to output the this keyword within this Pizza class, all the information for the **current instance** would be displayed.
+
+### Prototypes and Prototypal Inheritance
+
+#### Adding Functions to an Object
+
+When creating an object,  it may have several properties. For example, a name and age for a 'human' object. However, we may need to perform some functionality with this object - achieved using functions.
+
+Rather than adding the function as a property of each object, because the functionality is likely to be the same, we can instead add it to the **prototype** of the object. That way, rather than assigning the exact same function to each instance of an object, we can instead just access it via the prototype object. When we try and use anything in the prototype, a **prototype lookup** is performed.
+
