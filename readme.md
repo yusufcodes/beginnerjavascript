@@ -932,3 +932,25 @@ Below is an outline of how Wes took the first iteration of the slider exercise a
 - Move any functions to the outside of the object we want to use Prototype on
 - Declare these functions outside of the object, within the Prototype of the object e.g: '*Slider.prototype.nameHere = function() { ... }*'
 - Change any calling methods inside of the object to start with '*this.nameHere*' so the Prototype Lookup can happen and the function can be found
+
+### Bind, call and apply
+
+All three of the above are methods which change the scope of which the this keyword is bound to. 
+
+Note: The definition of the this keyword is dependant upon where the function is called, **not** where the function is defined.
+
+#### Bind
+
+.bind(): Set a function with the 'this' keyword equal to whatever is passed in as an argument. This will **return** a function which you need to call yourself (unlike call and apply).
+
+Additional arguments to bind: Aside from the first one which is always what we want to bind 'this' to, any added arguments 'line up' with corresponding arguments in the function. 
+
+#### Call and Apply
+These two methods work the same as bind but will actually **call** the function for you. 
+
+**Difference between Call and Apply - FROM MDN:**
+*While the syntax of this function (apply) is almost identical to that of call(), the fundamental difference is that call() accepts an **argument list**, while apply() accepts a **single array of arguments**.*
+
+.call(): Works **exactly the same** as bind but will **run the method for you**.
+
+.apply(): Works **exactly the same** as call, but accepts a **single array of arguments**.
