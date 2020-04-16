@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Bind Call and Apply!</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+
+<body>
+  <p>Hey</p>
+  <button>Click me</button>
+  <div class="wrapper">
+    <p>Hey im in a wrapper</p>
+  </div>
+  <script>
+    const person = {
+      name: 'Yusuf',
+      sayHi() {
+        console.log(`hey ${this.name}`);
+        return `hey ${this.name}`;
+      },
+    };
+
+    // this = Window, so the output is 'hey '
+    const oldSayHi = person.sayHi;
+
+    // this = person object, so th output is 'hey Yusuf' as expected
+    const sayHi = person.sayHi.bind(person);
+
+    const bill = {
+      total: 1000,
+      calculate(taxRate) {
+        return this.total + this.total * taxRate;
+      },
+    };
+
+    const total = bill.calculate(0, 13);
+    console.log(total);
+  </script>
+</body>
+
+</html>
